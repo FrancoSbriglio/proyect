@@ -14,6 +14,49 @@
     <property name="uuidType" value="varchar(36)" dbms="h2, mysql, mariadb"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194412_added_entity_NormaBarrio.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194413_added_entity_Barrio.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194414_added_entity_EstadoPersona.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194415_added_entity_Persona.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194416_added_entity_Domicilio.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194417_added_entity_ListaAmigos.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194418_added_entity_EspacioComun.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194419_added_entity_PeriodoEspacioComun.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194420_added_entity_CarnetDeConducir.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194421_added_entity_PlanillaIngresoEgreso.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194422_added_entity_QR.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194423_added_entity_Reporte.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194424_added_entity_Evento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194425_added_entity_DetalleEvento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194426_added_entity_EstadoEvento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194427_added_entity_Vehiculo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194428_added_entity_Color.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194429_added_entity_Seguro.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194430_added_entity_Aseguradora.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194431_added_entity_Marca.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194432_added_entity_Modelo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194433_added_entity_Art.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194434_added_entity_Mensaje.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194435_added_entity_Empresa.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194436_added_entity_Novedades.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20191021194413_added_entity_constraints_Barrio.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194414_added_entity_constraints_EstadoPersona.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194415_added_entity_constraints_Persona.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194416_added_entity_constraints_Domicilio.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194417_added_entity_constraints_ListaAmigos.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194418_added_entity_constraints_EspacioComun.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194420_added_entity_constraints_CarnetDeConducir.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194421_added_entity_constraints_PlanillaIngresoEgreso.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194422_added_entity_constraints_QR.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194423_added_entity_constraints_Reporte.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194424_added_entity_constraints_Evento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194425_added_entity_constraints_DetalleEvento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194427_added_entity_constraints_Vehiculo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194429_added_entity_constraints_Seguro.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194431_added_entity_constraints_Marca.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194433_added_entity_constraints_Art.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194434_added_entity_constraints_Mensaje.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191021194436_added_entity_constraints_Novedades.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

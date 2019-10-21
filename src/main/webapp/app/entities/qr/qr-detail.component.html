@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="qR">
+            <h2><span>QR</span> {{qR.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Codigo QR</span></dt>
+                <dd>
+                    <span>{{qR.codigoQR}}</span>
+                </dd>
+                <dt><span>Fecha Fin QR</span></dt>
+                <dd>
+                    <span>{{qR.fechaFinQR}}</span>
+                </dd>
+                <dt><span>Foto QR</span></dt>
+                <dd>
+                    <div *ngIf="qR.fotoQR">
+                        <a (click)="openFile(qR.fotoQRContentType, qR.fotoQR)">
+                            <img [src]="'data:' + qR.fotoQRContentType + ';base64,' + qR.fotoQR" style="max-width: 100%;" alt="qR image"/>
+                        </a>
+                        {{qR.fotoQRContentType}}, {{byteSize(qR.fotoQR)}}
+                    </div>
+                </dd>
+                <dt><span>Qr Persona</span></dt>
+                <dd>
+                    <div *ngIf="qR.qrPersona">
+                        <a [routerLink]="['/persona', qR.qrPersona?.id, 'view']">{{qR.qrPersona?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Qr Domicilio</span></dt>
+                <dd>
+                    <div *ngIf="qR.qrDomicilio">
+                        <a [routerLink]="['/domicilio', qR.qrDomicilio?.id, 'view']">{{qR.qrDomicilio?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/qr', qR.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

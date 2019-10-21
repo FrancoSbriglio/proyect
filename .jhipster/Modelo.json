@@ -1,0 +1,19 @@
+{
+    "name": "Modelo",
+    "fields": [
+        {
+            "fieldName": "nombreModelo",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20191021194432",
+    "entityTableName": "modelo",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

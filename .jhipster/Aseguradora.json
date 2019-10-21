@@ -1,0 +1,19 @@
+{
+    "name": "Aseguradora",
+    "fields": [
+        {
+            "fieldName": "nombreSeguro",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20191021194430",
+    "entityTableName": "aseguradora",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
