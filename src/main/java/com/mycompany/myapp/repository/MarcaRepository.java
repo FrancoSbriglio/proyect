@@ -1,14 +1,16 @@
 package com.mycompany.myapp.repository;
 
-import com.mycompany.myapp.domain.Marca;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.jpa.repository.*;
-import org.springframework.data.repository.query.Param;
-import org.springframework.stereotype.Repository;
-
 import java.util.List;
 import java.util.Optional;
+
+import com.mycompany.myapp.domain.Marca;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 /**
  * Spring Data  repository for the Marca entity.
@@ -25,5 +27,8 @@ public interface MarcaRepository extends JpaRepository<Marca, Long> {
 
     @Query("select marca from Marca marca left join fetch marca.modelos where marca.id =:id")
     Optional<Marca> findOneWithEagerRelationships(@Param("id") Long id);
+
+     @Query("select marca from Marca marca left join fetch marca.modelos where marca.nombreMarca =:nombreMarca")
+    Optional<Marca> findByNombreMarca(@Param("nombreMarca") String nombreMarca);
 
 }
