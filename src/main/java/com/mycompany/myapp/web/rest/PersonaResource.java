@@ -126,6 +126,13 @@ public class PersonaResource {
         return persona;
     }
 
+    @GetMapping("/persona/userperson/")
+    public List<Persona> getUserperson(@RequestParam String login) { //ya se que va param igual funciona lo probe para ver si no me tiraba error
+        log.debug("REST request to get Persona : {}",login);
+        List<Persona> persona = personaRepository.findAlluserperson(login);
+        return persona;
+    }
+
     /**
      * {@code DELETE  /personas/:id} : delete the "id" persona.
      *
