@@ -31,7 +31,9 @@ export class QRUpdateComponent implements OnInit {
     fechaFinQR: [],
     fotoQR: [],
     fotoQRContentType: [],
-    qrPersona: [],
+    tipoVisira: [],
+    qrAutorizador: [],
+    qrAutorizado: [],
     qrDomicilio: []
   });
 
@@ -74,7 +76,9 @@ export class QRUpdateComponent implements OnInit {
       fechaFinQR: qR.fechaFinQR != null ? qR.fechaFinQR.format(DATE_TIME_FORMAT) : null,
       fotoQR: qR.fotoQR,
       fotoQRContentType: qR.fotoQRContentType,
-      qrPersona: qR.qrPersona,
+      tipoVisira: qR.tipoVisira,
+      qrAutorizador: qR.qrAutorizador,
+      qrAutorizado: qR.qrAutorizado,
       qrDomicilio: qR.qrDomicilio
     });
   }
@@ -144,7 +148,9 @@ export class QRUpdateComponent implements OnInit {
         this.editForm.get(['fechaFinQR']).value != null ? moment(this.editForm.get(['fechaFinQR']).value, DATE_TIME_FORMAT) : undefined,
       fotoQRContentType: this.editForm.get(['fotoQRContentType']).value,
       fotoQR: this.editForm.get(['fotoQR']).value,
-      qrPersona: this.editForm.get(['qrPersona']).value,
+      tipoVisira: this.editForm.get(['tipoVisira']).value,
+      qrAutorizador: this.editForm.get(['qrAutorizador']).value,
+      qrAutorizado: this.editForm.get(['qrAutorizado']).value,
       qrDomicilio: this.editForm.get(['qrDomicilio']).value
     };
   }

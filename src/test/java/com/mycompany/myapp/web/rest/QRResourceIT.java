@@ -51,6 +51,9 @@ public class QRResourceIT {
     private static final String DEFAULT_FOTO_QR_CONTENT_TYPE = "image/jpg";
     private static final String UPDATED_FOTO_QR_CONTENT_TYPE = "image/png";
 
+    private static final String DEFAULT_TIPO_VISIRA = "AAAAAAAAAA";
+    private static final String UPDATED_TIPO_VISIRA = "BBBBBBBBBB";
+
     @Autowired
     private QRRepository qRRepository;
 
@@ -96,7 +99,8 @@ public class QRResourceIT {
             .codigoQR(DEFAULT_CODIGO_QR)
             .fechaFinQR(DEFAULT_FECHA_FIN_QR)
             .fotoQR(DEFAULT_FOTO_QR)
-            .fotoQRContentType(DEFAULT_FOTO_QR_CONTENT_TYPE);
+            .fotoQRContentType(DEFAULT_FOTO_QR_CONTENT_TYPE)
+            .tipoVisira(DEFAULT_TIPO_VISIRA);
         return qR;
     }
     /**
@@ -110,7 +114,8 @@ public class QRResourceIT {
             .codigoQR(UPDATED_CODIGO_QR)
             .fechaFinQR(UPDATED_FECHA_FIN_QR)
             .fotoQR(UPDATED_FOTO_QR)
-            .fotoQRContentType(UPDATED_FOTO_QR_CONTENT_TYPE);
+            .fotoQRContentType(UPDATED_FOTO_QR_CONTENT_TYPE)
+            .tipoVisira(UPDATED_TIPO_VISIRA);
         return qR;
     }
 
@@ -138,6 +143,7 @@ public class QRResourceIT {
         assertThat(testQR.getFechaFinQR()).isEqualTo(DEFAULT_FECHA_FIN_QR);
         assertThat(testQR.getFotoQR()).isEqualTo(DEFAULT_FOTO_QR);
         assertThat(testQR.getFotoQRContentType()).isEqualTo(DEFAULT_FOTO_QR_CONTENT_TYPE);
+        assertThat(testQR.getTipoVisira()).isEqualTo(DEFAULT_TIPO_VISIRA);
     }
 
     @Test
@@ -174,7 +180,8 @@ public class QRResourceIT {
             .andExpect(jsonPath("$.[*].codigoQR").value(hasItem(DEFAULT_CODIGO_QR.toString())))
             .andExpect(jsonPath("$.[*].fechaFinQR").value(hasItem(sameInstant(DEFAULT_FECHA_FIN_QR))))
             .andExpect(jsonPath("$.[*].fotoQRContentType").value(hasItem(DEFAULT_FOTO_QR_CONTENT_TYPE)))
-            .andExpect(jsonPath("$.[*].fotoQR").value(hasItem(Base64Utils.encodeToString(DEFAULT_FOTO_QR))));
+            .andExpect(jsonPath("$.[*].fotoQR").value(hasItem(Base64Utils.encodeToString(DEFAULT_FOTO_QR))))
+            .andExpect(jsonPath("$.[*].tipoVisira").value(hasItem(DEFAULT_TIPO_VISIRA.toString())));
     }
     
     @Test
@@ -191,7 +198,8 @@ public class QRResourceIT {
             .andExpect(jsonPath("$.codigoQR").value(DEFAULT_CODIGO_QR.toString()))
             .andExpect(jsonPath("$.fechaFinQR").value(sameInstant(DEFAULT_FECHA_FIN_QR)))
             .andExpect(jsonPath("$.fotoQRContentType").value(DEFAULT_FOTO_QR_CONTENT_TYPE))
-            .andExpect(jsonPath("$.fotoQR").value(Base64Utils.encodeToString(DEFAULT_FOTO_QR)));
+            .andExpect(jsonPath("$.fotoQR").value(Base64Utils.encodeToString(DEFAULT_FOTO_QR)))
+            .andExpect(jsonPath("$.tipoVisira").value(DEFAULT_TIPO_VISIRA.toString()));
     }
 
     @Test
@@ -218,7 +226,8 @@ public class QRResourceIT {
             .codigoQR(UPDATED_CODIGO_QR)
             .fechaFinQR(UPDATED_FECHA_FIN_QR)
             .fotoQR(UPDATED_FOTO_QR)
-            .fotoQRContentType(UPDATED_FOTO_QR_CONTENT_TYPE);
+            .fotoQRContentType(UPDATED_FOTO_QR_CONTENT_TYPE)
+            .tipoVisira(UPDATED_TIPO_VISIRA);
 
         restQRMockMvc.perform(put("/api/qrs")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -233,6 +242,7 @@ public class QRResourceIT {
         assertThat(testQR.getFechaFinQR()).isEqualTo(UPDATED_FECHA_FIN_QR);
         assertThat(testQR.getFotoQR()).isEqualTo(UPDATED_FOTO_QR);
         assertThat(testQR.getFotoQRContentType()).isEqualTo(UPDATED_FOTO_QR_CONTENT_TYPE);
+        assertThat(testQR.getTipoVisira()).isEqualTo(UPDATED_TIPO_VISIRA);
     }
 
     @Test

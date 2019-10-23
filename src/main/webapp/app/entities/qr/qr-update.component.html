@@ -37,12 +37,24 @@
                     <input type="hidden" class="form-control" name="fotoQRContentType" id="field_fotoQRContentType"
                            formControlName="fotoQRContentType" />
                 </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tipoVisira">Tipo Visira</label>
+                    <input type="text" class="form-control" name="tipoVisira" id="field_tipoVisira"
+                           formControlName="tipoVisira"/>
+                </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" for="field_qrPersona">Qr Persona</label>
-                    <select class="form-control" id="field_qrPersona" name="qrPersona" formControlName="qrPersona">
+                    <label class="form-control-label" for="field_qrAutorizador">Qr Autorizador</label>
+                    <select class="form-control" id="field_qrAutorizador" name="qrAutorizador" formControlName="qrAutorizador">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="personaOption.id === editForm.get('qrPersona').value?.id ? editForm.get('qrPersona').value : personaOption" *ngFor="let personaOption of personas; trackBy: trackPersonaById">{{personaOption.id}}</option>
+                        <option [ngValue]="personaOption.id === editForm.get('qrAutorizador').value?.id ? editForm.get('qrAutorizador').value : personaOption" *ngFor="let personaOption of personas; trackBy: trackPersonaById">{{personaOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_qrAutorizado">Qr Autorizado</label>
+                    <select class="form-control" id="field_qrAutorizado" name="qrAutorizado" formControlName="qrAutorizado">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="personaOption.id === editForm.get('qrAutorizado').value?.id ? editForm.get('qrAutorizado').value : personaOption" *ngFor="let personaOption of personas; trackBy: trackPersonaById">{{personaOption.id}}</option>
                     </select>
                 </div>
                 <div class="form-group">

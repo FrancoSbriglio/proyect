@@ -8,9 +8,15 @@
     -->
     <changeSet id="20191021194422-2" author="jhipster">
         
-        <addForeignKeyConstraint baseColumnNames="qr_persona_id"
+        <addForeignKeyConstraint baseColumnNames="qr_autorizador_id"
                                  baseTableName="qr"
-                                 constraintName="fk_qr_qr_persona_id"
+                                 constraintName="fk_qr_qr_autorizador_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="persona"/>
+
+        <addForeignKeyConstraint baseColumnNames="qr_autorizado_id"
+                                 baseTableName="qr"
+                                 constraintName="fk_qr_qr_autorizado_id"
                                  referencedColumnNames="id"
                                  referencedTableName="persona"/>
 

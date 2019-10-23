@@ -27,7 +27,7 @@ describe('Service Tests', () => {
       httpMock = injector.get(HttpTestingController);
       currentDate = moment();
 
-      elemDefault = new QR(0, 'AAAAAAA', currentDate, 'image/png', 'AAAAAAA');
+      elemDefault = new QR(0, 'AAAAAAA', currentDate, 'image/png', 'AAAAAAA', 'AAAAAAA');
     });
 
     describe('Service methods', () => {
@@ -76,7 +76,8 @@ describe('Service Tests', () => {
           {
             codigoQR: 'BBBBBB',
             fechaFinQR: currentDate.format(DATE_TIME_FORMAT),
-            fotoQR: 'BBBBBB'
+            fotoQR: 'BBBBBB',
+            tipoVisira: 'BBBBBB'
           },
           elemDefault
         );
@@ -101,7 +102,8 @@ describe('Service Tests', () => {
           {
             codigoQR: 'BBBBBB',
             fechaFinQR: currentDate.format(DATE_TIME_FORMAT),
-            fotoQR: 'BBBBBB'
+            fotoQR: 'BBBBBB',
+            tipoVisira: 'BBBBBB'
           },
           elemDefault
         );

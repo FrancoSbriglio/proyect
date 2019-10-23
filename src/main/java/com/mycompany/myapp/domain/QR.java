@@ -32,9 +32,16 @@ public class QR implements Serializable {
     @Column(name = "foto_qr_content_type")
     private String fotoQRContentType;
 
+    @Column(name = "tipo_visira")
+    private String tipoVisira;
+
     @ManyToOne
     @JsonIgnoreProperties("qRS")
-    private Persona qrPersona;
+    private Persona qrAutorizador;
+
+    @ManyToOne
+    @JsonIgnoreProperties("qRS")
+    private Persona qrAutorizado;
 
     @ManyToOne
     @JsonIgnoreProperties("qRS")
@@ -101,17 +108,43 @@ public class QR implements Serializable {
         this.fotoQRContentType = fotoQRContentType;
     }
 
-    public Persona getQrPersona() {
-        return qrPersona;
+    public String getTipoVisira() {
+        return tipoVisira;
     }
 
-    public QR qrPersona(Persona persona) {
-        this.qrPersona = persona;
+    public QR tipoVisira(String tipoVisira) {
+        this.tipoVisira = tipoVisira;
         return this;
     }
 
-    public void setQrPersona(Persona persona) {
-        this.qrPersona = persona;
+    public void setTipoVisira(String tipoVisira) {
+        this.tipoVisira = tipoVisira;
+    }
+
+    public Persona getQrAutorizador() {
+        return qrAutorizador;
+    }
+
+    public QR qrAutorizador(Persona persona) {
+        this.qrAutorizador = persona;
+        return this;
+    }
+
+    public void setQrAutorizador(Persona persona) {
+        this.qrAutorizador = persona;
+    }
+
+    public Persona getQrAutorizado() {
+        return qrAutorizado;
+    }
+
+    public QR qrAutorizado(Persona persona) {
+        this.qrAutorizado = persona;
+        return this;
+    }
+
+    public void setQrAutorizado(Persona persona) {
+        this.qrAutorizado = persona;
     }
 
     public Domicilio getQrDomicilio() {
@@ -152,6 +185,7 @@ public class QR implements Serializable {
             ", fechaFinQR='" + getFechaFinQR() + "'" +
             ", fotoQR='" + getFotoQR() + "'" +
             ", fotoQRContentType='" + getFotoQRContentType() + "'" +
+            ", tipoVisira='" + getTipoVisira() + "'" +
             "}";
     }
 }

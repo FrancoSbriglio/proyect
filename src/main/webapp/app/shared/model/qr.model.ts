@@ -8,7 +8,9 @@ export interface IQR {
   fechaFinQR?: Moment;
   fotoQRContentType?: string;
   fotoQR?: any;
-  qrPersona?: IPersona;
+  tipoVisira?: string;
+  qrAutorizador?: IPersona;
+  qrAutorizado?: IPersona;
   qrDomicilio?: IDomicilio;
 }
 
@@ -19,7 +21,9 @@ export class QR implements IQR {
     public fechaFinQR?: Moment,
     public fotoQRContentType?: string,
     public fotoQR?: any,
-    public qrPersona?: IPersona,
+    public tipoVisira?: string,
+    public qrAutorizador?: IPersona,
+    public qrAutorizado?: IPersona,
     public qrDomicilio?: IDomicilio
   ) {}
 }

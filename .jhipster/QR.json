@@ -13,6 +13,10 @@
             "fieldName": "fotoQR",
             "fieldType": "byte[]",
             "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "tipoVisira",
+            "fieldType": "String"
         }
     ],
     "relationships": [
@@ -20,7 +24,14 @@
             "relationshipType": "many-to-one",
             "otherEntityName": "persona",
             "otherEntityRelationshipName": "qR",
-            "relationshipName": "qrPersona",
+            "relationshipName": "qrAutorizador",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "persona",
+            "otherEntityRelationshipName": "qR",
+            "relationshipName": "qrAutorizado",
             "otherEntityField": "id"
         },
         {

@@ -21,7 +21,9 @@
             <th><span>Codigo QR</span></th>
             <th><span>Fecha Fin QR</span></th>
             <th><span>Foto QR</span></th>
-            <th><span>Qr Persona</span></th>
+            <th><span>Tipo Visira</span></th>
+            <th><span>Qr Autorizador</span></th>
+            <th><span>Qr Autorizado</span></th>
             <th><span>Qr Domicilio</span></th>
             <th></th>
             </tr>
@@ -37,9 +39,15 @@
                     </a>
                     <span *ngIf="qR.fotoQR">{{qR.fotoQRContentType}}, {{byteSize(qR.fotoQR)}}</span>
                 </td>
+                <td>{{qR.tipoVisira}}</td>
                 <td>
-                    <div *ngIf="qR.qrPersona">
-                        <a [routerLink]="['/persona', qR.qrPersona?.id, 'view' ]" >{{qR.qrPersona?.id}}</a>
+                    <div *ngIf="qR.qrAutorizador">
+                        <a [routerLink]="['/persona', qR.qrAutorizador?.id, 'view' ]" >{{qR.qrAutorizador?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="qR.qrAutorizado">
+                        <a [routerLink]="['/persona', qR.qrAutorizado?.id, 'view' ]" >{{qR.qrAutorizado?.id}}</a>
                     </div>
                 </td>
                 <td>

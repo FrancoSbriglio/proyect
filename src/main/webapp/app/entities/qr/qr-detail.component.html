@@ -22,10 +22,20 @@
                         {{qR.fotoQRContentType}}, {{byteSize(qR.fotoQR)}}
                     </div>
                 </dd>
-                <dt><span>Qr Persona</span></dt>
+                <dt><span>Tipo Visira</span></dt>
                 <dd>
-                    <div *ngIf="qR.qrPersona">
-                        <a [routerLink]="['/persona', qR.qrPersona?.id, 'view']">{{qR.qrPersona?.id}}</a>
+                    <span>{{qR.tipoVisira}}</span>
+                </dd>
+                <dt><span>Qr Autorizador</span></dt>
+                <dd>
+                    <div *ngIf="qR.qrAutorizador">
+                        <a [routerLink]="['/persona', qR.qrAutorizador?.id, 'view']">{{qR.qrAutorizador?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Qr Autorizado</span></dt>
+                <dd>
+                    <div *ngIf="qR.qrAutorizado">
+                        <a [routerLink]="['/persona', qR.qrAutorizado?.id, 'view']">{{qR.qrAutorizado?.id}}</a>
                     </div>
                 </dd>
                 <dt><span>Qr Domicilio</span></dt>
