@@ -2,7 +2,9 @@ package com.mycompany.myapp.repository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
+import com.mycompany.myapp.domain.Authority;
 import com.mycompany.myapp.domain.Persona;
 
 import org.springframework.data.domain.Page;
@@ -40,4 +42,7 @@ public interface PersonaRepository extends JpaRepository<Persona, Long> {
 
     @Query("select p from Persona p join p.personaUser pu join p.personaUser.authorities where pu.login=:login")   
     List<Persona> findAlluserperson(@Param ("login") String login);
+
+    @Query("select p.personaUser.authorities from Persona p  where p.personaUser.login=:login")   
+    Set<Authority> findAlluserperson1(@Param ("login") String login);
 }

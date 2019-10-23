@@ -4,7 +4,9 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
+import com.mycompany.myapp.domain.Authority;
 import com.mycompany.myapp.domain.Persona;
 import com.mycompany.myapp.repository.PersonaRepository;
 import com.mycompany.myapp.web.rest.errors.BadRequestAlertException;
@@ -127,9 +129,16 @@ public class PersonaResource {
     }
 
     @GetMapping("/persona/userperson/")
-    public List<Persona> getUserperson(@RequestParam String login) { //ya se que va param igual funciona lo probe para ver si no me tiraba error
+    public List<Persona> getUserperson(@RequestParam String login) { 
         log.debug("REST request to get Persona : {}",login);
         List<Persona> persona = personaRepository.findAlluserperson(login);
+        Set<Authority> auth = personaRepository.findAlluserperson1(login);
+        for (Persona p : persona) {
+            
+            p.getPersonaUser().setAuthorities(auth);
+            
+        } 
+        
         return persona;
     }
 
