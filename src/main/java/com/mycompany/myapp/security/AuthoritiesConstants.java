@@ -13,6 +13,8 @@ public final class AuthoritiesConstants {
 
     public static final String PROPIETARIO = "ROLE_PROPIETARIO";
 
+    public static final String GUARDIA = "ROLE_GUARDIA";
+
     private AuthoritiesConstants() {
     }
 }
