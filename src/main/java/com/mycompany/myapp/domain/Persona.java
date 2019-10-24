@@ -34,11 +34,11 @@ public class Persona implements Serializable {
     private Integer telefonoPersona;
 
     @ManyToOne
-    @JsonIgnoreProperties("personas")
+   // @JsonIgnoreProperties("personas")
     private User personaUser;
 
     @ManyToOne
-    @JsonIgnoreProperties("personas")
+   // @JsonIgnoreProperties("personas")
     private Barrio personabarrio;
 
     @ManyToMany
@@ -198,7 +198,7 @@ public class Persona implements Serializable {
     @Override
     public String toString() {
         return "Persona{" +
-           // "id=" + getId() +
+            "id=" + getId() +
             ", nombrePersona='" + getNombrePersona() + "'" +
             ", apellidoPersona='" + getApellidoPersona() + "'" +
             ", dniPersona=" + getDniPersona() +
