@@ -129,15 +129,13 @@ public class PersonaResource {
     }
 
     @GetMapping("/persona/userperson/")
-    public List<Persona> getUserperson(@RequestParam Long id) { 
+    public Persona getUserperson(@RequestParam Long id) { 
         log.debug("REST request to get Persona : {}",id);
-        List<Persona> persona = personaRepository.findAlluserperson(id);
-        Set<Authority> auth = personaRepository.findAlluserperson1(id);
-        for (Persona p : persona) {
-            
-            p.getPersonaUser().setAuthorities(auth);
-            
-        } 
+        Persona persona = personaRepository.findAlluserperson(id);
+        //Set<Authority> auth = personaRepository.findAlluserperson1(id);
+        // for (Persona p : persona) {
+        //     p.getPersonaUser().setAuthorities(auth);
+        // } 
         
         return persona;
     }
