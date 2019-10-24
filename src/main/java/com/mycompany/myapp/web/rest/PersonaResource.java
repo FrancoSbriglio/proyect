@@ -140,6 +140,18 @@ public class PersonaResource {
         return persona;
     }
 
+    @GetMapping("/persona/useremail/{email}")
+    public Persona getUserperson(@PathVariable String email) { 
+        log.debug("REST request to get Persona : {}",email);
+        Persona persona = personaRepository.findAlluseremail(email);
+        Set<Authority> auth = personaRepository.findAlluserperson1(email);
+       //  for (Persona p : persona) {
+            persona.getPersonaUser().setAuthorities(auth);
+         //} 
+        
+        return persona;
+    }
+
     /**
      * {@code DELETE  /personas/:id} : delete the "id" persona.
      *
