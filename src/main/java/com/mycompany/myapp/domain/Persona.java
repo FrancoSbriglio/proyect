@@ -198,7 +198,7 @@ public class Persona implements Serializable {
     @Override
     public String toString() {
         return "Persona{" +
-            "id=" + getId() +
+           // "id=" + getId() +
             ", nombrePersona='" + getNombrePersona() + "'" +
             ", apellidoPersona='" + getApellidoPersona() + "'" +
             ", dniPersona=" + getDniPersona() +
