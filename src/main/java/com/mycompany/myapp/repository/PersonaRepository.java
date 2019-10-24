@@ -6,6 +6,7 @@ import java.util.Set;
 
 import com.mycompany.myapp.domain.Authority;
 import com.mycompany.myapp.domain.Persona;
+import com.mycompany.myapp.domain.Vehiculo;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -43,6 +44,8 @@ public interface PersonaRepository extends JpaRepository<Persona, Long> {
     @Query("select p from Persona p join p.personaUser pu join p.personaUser.authorities join p.vehiculos where pu.id=:id")   
     Persona findAlluserperson(@Param ("id") Long id);
 
+    @Query("select p.vehiculos from Persona p join p.personaUser pu where pu.id=:id")   
+    Set<Vehiculo> findAlluserpersonvehicle(@Param ("id") Long id);
 
     @Query("select p from Persona p join p.personaUser pu join p.personaUser.authorities where pu.email=:email")   
     Persona findAlluseremail(@Param ("email") String email);

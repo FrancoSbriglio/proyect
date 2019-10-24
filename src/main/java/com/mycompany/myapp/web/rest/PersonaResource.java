@@ -8,6 +8,7 @@ import java.util.Set;
 
 import com.mycompany.myapp.domain.Authority;
 import com.mycompany.myapp.domain.Persona;
+import com.mycompany.myapp.domain.Vehiculo;
 import com.mycompany.myapp.repository.PersonaRepository;
 import com.mycompany.myapp.web.rest.errors.BadRequestAlertException;
 
@@ -132,10 +133,11 @@ public class PersonaResource {
     public Persona getUserperson(@RequestParam Long id) { 
         log.debug("REST request to get Persona : {}",id);
         Persona persona = personaRepository.findAlluserperson(id);
-        //Set<Authority> auth = personaRepository.findAlluserperson1(id);
+        Set<Vehiculo> vehiculo = personaRepository.findAlluserpersonvehicle(id);
         // for (Persona p : persona) {
-        //     p.getPersonaUser().setAuthorities(auth);
-        // } 
+            // p.getPersonaUser().setAuthorities(vehiculo);
+            persona.setVehiculos(vehiculo);
+       //  } 
         
         return persona;
     }
