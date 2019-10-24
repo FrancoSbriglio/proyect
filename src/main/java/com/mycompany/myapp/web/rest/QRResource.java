@@ -103,6 +103,13 @@ public class QRResource {
         return ResponseUtil.wrapOrNotFound(qR);
     }
 
+    @GetMapping("/qrs/personaqr/{codigoqr}")
+    public List<QR> getQR(@PathVariable String codigoqr) {
+        log.debug("REST request to get QR : {}", codigoqr);
+        List<QR> qR = qRRepository.findAllqrpersona(codigoqr);
+        return qR;
+    }
+
     /**
      * {@code DELETE  /qrs/:id} : delete the "id" qR.
      *
