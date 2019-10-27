@@ -34,11 +34,11 @@ public class Persona implements Serializable {
     private Integer telefonoPersona;
 
     @ManyToOne
-   // @JsonIgnoreProperties("personas")
+    @JsonIgnoreProperties("personas")
     private User personaUser;
 
     @ManyToOne
-   // @JsonIgnoreProperties("personas")
+    @JsonIgnoreProperties("personas")
     private Barrio personabarrio;
 
     @ManyToMany
@@ -48,7 +48,7 @@ public class Persona implements Serializable {
     private Set<Vehiculo> vehiculos = new HashSet<>();
 
     @ManyToMany(mappedBy = "domiciliopersonas")
-    @JsonIgnore
+   // @JsonIgnore
     private Set<Domicilio> personadomicilios = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove

@@ -156,19 +156,17 @@ public class PersonaResource {
         return persona;
     }
 
- /*   @GetMapping("/personasdom/domicilio/{apellido}")
-    public List<Persona> getPersonadom(@PathVariable String apellido) {
-        log.debug("REST request to get Persona : {}", apellido);
-        List<Persona> persona = personaRepository.findAllpersonadomicilio(apellido);
-        Set<Domicilio> dom = personaRepository.findAlldomicilio(apellido);
-          for (Persona p : persona) {
-                p.setPersonadomicilios(dom); 
-            //persona.getPersonaUser().setAuthorities(auth);
-          } 
-          
+    @GetMapping("/personasdom/domicilio/{id}")
+    public List<Persona> getPersonadom(@PathVariable Long id) {
+        log.debug("REST request to get Persona : {}", id);
+        
+        Set<Domicilio> domicilios = personaRepository.findAlldomicilio(id);
+        // iterator.next se usa para obtener el primer elemento de la lsita domicilios
+        Long id_casa = domicilios.iterator().next().getId();
+        List<Persona> persona = personaRepository.findAlldomicilio1(id_casa);  
          return persona;
      } 
-       */   
+         
 
     /**
      * {@code DELETE  /personas/:id} : delete the "id" persona.

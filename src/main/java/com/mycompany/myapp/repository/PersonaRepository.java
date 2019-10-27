@@ -54,10 +54,11 @@ public interface PersonaRepository extends JpaRepository<Persona, Long> {
     @Query("select p.personaUser.authorities from Persona p  where p.personaUser.email=:email")   
     Set<Authority> findAlluserperson1(@Param ("email") String email);
 
-    //  @Query("select p from Persona p join p.personadomicilios pd where p.apellidoPersona=:apellido")   
-    //  List<Persona> findAllpersonadomicilio(@Param ("apellido") String apellido);
+      
+    @Query("select p.personadomicilios from Persona p where p.id=:id")   
+    Set<Domicilio> findAlldomicilio(@Param ("id") Long id);
 
-    //  @Query("select p.personadomicilios from Persona p where p.apellidoPersona=:apellido")   
-    //  Set<Domicilio> findAlldomicilio(@Param ("apellido") String apellido);
+    @Query("select p from Persona p join p.personadomicilios d where :id_casa = d.id")   
+    List<Persona> findAlldomicilio1(@Param ("id_casa") Long id_casa);
 
 }
