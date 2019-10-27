@@ -122,14 +122,14 @@ public class DomicilioResource {
 
 
       @GetMapping("/domicilios/pers/{apellido}")
-    public ResponseEntity<Domicilio> getDomiciliopers(@PathVariable String apellido) {
+    public List<Domicilio> getDomiciliopers(@PathVariable String apellido) {
         log.debug("REST request to get Domicilio : {}", apellido);
-        Optional<Domicilio> domicilio = domicilioRepository.findAlldomperson(apellido);
+        List<Domicilio> domicilio = domicilioRepository.findAlldomperson(apellido);
         // Set<Persona> per = domicilioRepository.findAlldompersona(apellido);
         // for(Domicilio dom : domicilio){
         //     dom.setDomiciliopersonas(per);
         // }
-        return ResponseUtil.wrapOrNotFound(domicilio);
+        return domicilio;
     } 
 
     /**
