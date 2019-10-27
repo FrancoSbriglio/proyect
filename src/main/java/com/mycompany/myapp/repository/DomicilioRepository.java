@@ -2,8 +2,10 @@ package com.mycompany.myapp.repository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import com.mycompany.myapp.domain.Domicilio;
+import com.mycompany.myapp.domain.Persona;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -30,4 +32,11 @@ public interface DomicilioRepository extends JpaRepository<Domicilio, Long> {
 
       @Query("select domicilio from Domicilio domicilio left join fetch domicilio.domiciliopersonas where domicilio.casaDomicilio =:casaDomicilio And domicilio.manzanaDomicilio=:manzanaDomicilio")
     Optional<Domicilio> findAllcasadomicilio(@Param("casaDomicilio") String casaDomicilio,@Param("manzanaDomicilio") String manzanaDomicilio);
+
+    @Query("select domicilio from Domicilio domicilio left join fetch domicilio.domiciliopersonas dp where dp.apellidoPersona =:apellido")
+    Optional<Domicilio> findAlldomperson(@Param("apellido") String apellido);
+
+   // @Query("select domicilio.domiciliopersonas from Domicilio domicilio  where domicilio.apellidoPersona =:apellido")
+   // Set<Persona> findAlldompersona(@Param("apellido") String apellido);
+   
 }

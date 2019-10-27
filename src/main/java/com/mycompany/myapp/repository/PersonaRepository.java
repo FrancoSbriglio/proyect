@@ -5,6 +5,7 @@ import java.util.Optional;
 import java.util.Set;
 
 import com.mycompany.myapp.domain.Authority;
+import com.mycompany.myapp.domain.Domicilio;
 import com.mycompany.myapp.domain.Persona;
 import com.mycompany.myapp.domain.Vehiculo;
 
@@ -52,4 +53,11 @@ public interface PersonaRepository extends JpaRepository<Persona, Long> {
 
     @Query("select p.personaUser.authorities from Persona p  where p.personaUser.email=:email")   
     Set<Authority> findAlluserperson1(@Param ("email") String email);
+
+    //  @Query("select p from Persona p join p.personadomicilios pd where p.apellidoPersona=:apellido")   
+    //  List<Persona> findAllpersonadomicilio(@Param ("apellido") String apellido);
+
+    //  @Query("select p.personadomicilios from Persona p where p.apellidoPersona=:apellido")   
+    //  Set<Domicilio> findAlldomicilio(@Param ("apellido") String apellido);
+
 }

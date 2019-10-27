@@ -4,8 +4,10 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import com.mycompany.myapp.domain.Domicilio;
+import com.mycompany.myapp.domain.Persona;
 import com.mycompany.myapp.repository.DomicilioRepository;
 import com.mycompany.myapp.web.rest.errors.BadRequestAlertException;
 
@@ -117,6 +119,18 @@ public class DomicilioResource {
         Optional<Domicilio> domicilio = domicilioRepository.findAllcasadomicilio(casaDomicilio,manzanaDomicilio);
         return ResponseUtil.wrapOrNotFound(domicilio);
       }
+
+
+      @GetMapping("/domicilios/pers/{apellido}")
+    public ResponseEntity<Domicilio> getDomiciliopers(@PathVariable String apellido) {
+        log.debug("REST request to get Domicilio : {}", apellido);
+        Optional<Domicilio> domicilio = domicilioRepository.findAlldomperson(apellido);
+        // Set<Persona> per = domicilioRepository.findAlldompersona(apellido);
+        // for(Domicilio dom : domicilio){
+        //     dom.setDomiciliopersonas(per);
+        // }
+        return ResponseUtil.wrapOrNotFound(domicilio);
+    } 
 
     /**
      * {@code DELETE  /domicilios/:id} : delete the "id" domicilio.

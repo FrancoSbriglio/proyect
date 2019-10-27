@@ -7,6 +7,7 @@ import java.util.Optional;
 import java.util.Set;
 
 import com.mycompany.myapp.domain.Authority;
+import com.mycompany.myapp.domain.Domicilio;
 import com.mycompany.myapp.domain.Persona;
 import com.mycompany.myapp.domain.Vehiculo;
 import com.mycompany.myapp.repository.PersonaRepository;
@@ -154,6 +155,20 @@ public class PersonaResource {
         
         return persona;
     }
+
+ /*   @GetMapping("/personasdom/domicilio/{apellido}")
+    public List<Persona> getPersonadom(@PathVariable String apellido) {
+        log.debug("REST request to get Persona : {}", apellido);
+        List<Persona> persona = personaRepository.findAllpersonadomicilio(apellido);
+        Set<Domicilio> dom = personaRepository.findAlldomicilio(apellido);
+          for (Persona p : persona) {
+                p.setPersonadomicilios(dom); 
+            //persona.getPersonaUser().setAuthorities(auth);
+          } 
+          
+         return persona;
+     } 
+       */   
 
     /**
      * {@code DELETE  /personas/:id} : delete the "id" persona.
