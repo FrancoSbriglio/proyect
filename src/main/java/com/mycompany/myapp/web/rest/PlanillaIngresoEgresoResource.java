@@ -135,6 +135,13 @@ public class PlanillaIngresoEgresoResource {
         return planillaIngresoEgreso;
     }
 
+    @GetMapping("/planilladomicilio/")
+    public List<PlanillaIngresoEgreso> getPlanillaIngresoEgresodom(@RequestParam(name="casaDomicilio") String  casaDomicilio,@RequestParam(name="manzanaDomicilio")   String  manzanaDomicilio) {
+        log.debug("REST request to get PlanillaIngresoEgreso fmefeofkeopfkekfekfo: {}", casaDomicilio);
+        List<PlanillaIngresoEgreso> planillaIngresoEgreso = planillaIngresoEgresoRepository.findAllplanilladomicilio(casaDomicilio,manzanaDomicilio);
+        return planillaIngresoEgreso;
+    }
+
     /**
      * {@code DELETE  /planilla-ingreso-egresos/:id} : delete the "id" planillaIngresoEgreso.
      *

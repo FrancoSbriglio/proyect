@@ -38,4 +38,8 @@ Optional<PlanillaIngresoEgreso> findAlldniegreso(@Param("dniPersona") Integer dn
 @Query("select planillaIngresoEgreso from PlanillaIngresoEgreso planillaIngresoEgreso where planillaIngresoEgreso.fechaIngreso>=:fechainicio AND planillaIngresoEgreso.fechaEgreso>=:fechafin")    
 List<PlanillaIngresoEgreso> findByAllentrefechas(@Param("fechainicio") ZonedDateTime fechainicio,@Param("fechafin") ZonedDateTime fechafin);
 
+@Query("select pie from PlanillaIngresoEgreso pie join pie.planillaDestino pied where pied.casaDomicilio =:casaDomicilio And pied.manzanaDomicilio=:manzanaDomicilio ")    
+List<PlanillaIngresoEgreso> findAllplanilladomicilio(@Param("casaDomicilio") String casaDomicilio,@Param("manzanaDomicilio") String manzanaDomicilio);
+
+
 }
