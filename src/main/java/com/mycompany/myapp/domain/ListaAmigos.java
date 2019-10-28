@@ -23,7 +23,7 @@ public class ListaAmigos implements Serializable {
     private String nombreListaAmigos;
 
     @OneToOne
-    @JoinColumn(unique = true)
+    @JoinColumn(unique = false)
     private Persona pertenece;
 
     @ManyToMany
