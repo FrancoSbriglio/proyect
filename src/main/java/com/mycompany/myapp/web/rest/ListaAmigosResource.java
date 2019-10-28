@@ -111,12 +111,12 @@ public class ListaAmigosResource {
         return ResponseUtil.wrapOrNotFound(listaAmigos);
     }
 
-     /*@GetMapping("/lista-amigos/dnilista/{dniPersona}")
+     @GetMapping("/lista-amigos/dnilista/{dniPersona}")
     public List<ListaAmigos> getListaAmigosdni(@PathVariable Integer dniPersona) {
         log.debug("REST request to get ListaAmigos : {}", dniPersona);
         List<ListaAmigos> listaAmigos = listaAmigosRepository.findAlllistadni(dniPersona);
         return listaAmigos;
-    }*/
+    }
 
     /**
      * {@code DELETE  /lista-amigos/:id} : delete the "id" listaAmigos.
