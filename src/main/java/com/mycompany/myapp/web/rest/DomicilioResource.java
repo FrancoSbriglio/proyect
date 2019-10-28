@@ -113,6 +113,13 @@ public class DomicilioResource {
         return ResponseUtil.wrapOrNotFound(domicilio);
     }
 
+    @GetMapping("/dompersona/{id}")
+    public ResponseEntity<Domicilio> getDomicilioidpersona(@PathVariable Long id) {
+        log.debug("REST request to get Domicilio : {}", id);
+        Optional<Domicilio> domicilio = domicilioRepository.findAllpersonadomicilioid(id);
+        return ResponseUtil.wrapOrNotFound(domicilio);
+    }
+
      @GetMapping("/domicilios/domiciliospersona/")
     public ResponseEntity<Domicilio> getDomicilio(@RequestParam(name="casaDomicilio") String  casaDomicilio,@RequestParam(name="manzanaDomicilio")   String  manzanaDomicilio) {
         log.debug("REST request to get Domicilio : {}", casaDomicilio);

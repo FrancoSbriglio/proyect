@@ -36,7 +36,7 @@ public interface DomicilioRepository extends JpaRepository<Domicilio, Long> {
     @Query("select domicilio from Domicilio domicilio left join fetch domicilio.domiciliopersonas dp where dp.apellidoPersona =:apellido")
     List<Domicilio> findAlldomperson(@Param("apellido") String apellido);
 
-   // @Query("select domicilio.domiciliopersonas from Domicilio domicilio  where domicilio.apellidoPersona =:apellido")
-   // Set<Persona> findAlldompersona(@Param("apellido") String apellido);
+    @Query("select d from Domicilio d join d.domiciliopersonas dom where dom.id =:id")
+    Optional<Domicilio> findAllpersonadomicilioid(@Param("id") Long id);
    
 }
